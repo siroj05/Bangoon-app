@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210207877635",
+    "project_id": "bangoon-d3ab0",
+    "storage_bucket": "bangoon-d3ab0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210207877635:android:201faf0ffb5f9c73803c36",
+        "android_client_info": {
+          "package_name": "com.blaze.bangoon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210207877635-2kfn4ef1uapu0cfbiev0c1kotmbskuti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZb0aN8SPc0ZSx8IR9ci_g1vEXAWagmRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210207877635-2kfn4ef1uapu0cfbiev0c1kotmbskuti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
