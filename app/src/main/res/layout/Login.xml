@@ -14,7 +14,7 @@
         android:layout_marginRight="116dp"
         android:layout_marginBottom="156dp"
         android:text="SIGN IN WITH GOOGLE"
-        app:backgroundTint="#BF6666"
+        app:backgroundTint="#3DBDB1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
