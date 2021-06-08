@@ -58,7 +58,7 @@
         tools:layout_editor_absoluteY="-3dp">>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageSlide"
             android:layout_width="81dp"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
@@ -71,6 +71,9 @@
             android:gravity="center"
             android:text="Main Menu"
             android:textColor="#FFFFFF" />
+
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
