@@ -4,41 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/ic_launcher_background">
+    android:background="@drawable/ic_launcher_background"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tvTittle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
         android:text="BANGOON!"
 
         android:textColor="#FFFFFF"
         android:textColorHint="#8E6B6B"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cbDone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-
-        android:id="@+id/btnAddTodo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:layout_marginBottom="108dp"
-
-        android:text="GET STARTED"
-        android:textColorHint="#854E4E"
-        android:textColorLink="#734242"
-        app:backgroundTint="#3DBDB1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="#633737" />
+        app:layout_constraintEnd_toStartOf="@+id/cbDone"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.346" />
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="113dp"
+        android:layout_height="103dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/alarm_bangoon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
