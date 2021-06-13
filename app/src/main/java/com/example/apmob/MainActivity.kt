@@ -1,5 +1,6 @@
 package com.example.apmob
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -9,10 +10,12 @@ class MainActivity:AppCompatActivity(){
 
     lateinit var toggle: ActionBarDrawerToggle
 
-    override fun onCreate(savedInstanceStates: Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.Login)
-        imageSlide.setOnClickListener(this);
+        setContentView(R.layout.main_menu)
+        agenda.setOnClickListener {
+            val intent = Intent(this,Agenda::class.java)
+            startActivity(intent)
+        }
     }
-
 }
