@@ -7,9 +7,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_launcher_background">
 
-
     <ImageView
-        android:id="@+id/imageViewSignIn"
+        android:id="@+id/imageViewRegister"
         android:layout_width="113dp"
         android:layout_height="103dp"
         android:layout_marginBottom="464dp"
@@ -20,17 +19,18 @@
         app:srcCompat="@drawable/alarm_bangoon" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_registrasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
-        android:outlineAmbientShadowColor="none"
-        android:text="Login"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="112dp"
+        android:outlineProvider="none"
+        android:text="Registrasi"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#01579b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_password" />
 
     <EditText
         android:id="@+id/text_password"
@@ -48,26 +48,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_email"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.046" />
 
-    <Button
-        android:id="@+id/btn_registrasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="52dp"
-        android:outlineProvider="none"
-        android:text="Registrasi"
+    <EditText
+        android:id="@+id/text_password_confirm"
+        android:layout_width="205dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:gravity="left"
+        android:hint="Re-enter Password"
+        android:inputType="textPassword"
         android:textColor="#FFFFFF"
-        app:backgroundTint="@android:color/transparent"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/text_email"
+        app:layout_constraintVertical_bias="0.297" />
 
     <EditText
         android:id="@+id/text_email"
-        android:layout_width="211dp"
-        android:layout_height="58dp"
+        android:layout_width="205dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:gravity="left"
         android:hint="Email"
@@ -81,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.508" />
+        app:layout_constraintVertical_bias="0.499" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
