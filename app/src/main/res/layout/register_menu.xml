@@ -76,7 +76,6 @@
         android:gravity="left"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:srcCompat="@drawable/email-removebg-preview.png"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
