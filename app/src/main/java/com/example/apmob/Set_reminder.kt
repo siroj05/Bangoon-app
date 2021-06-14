@@ -1,15 +1,11 @@
 package com.example.apmob
 
-import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.main_menu.*
+import android.os.Bundle
 
-class Agenda : AppCompatActivity() {
-
+class Set_reminder : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.agenda)
-
+        setContentView(R.layout.set_timer)
     }
 }
