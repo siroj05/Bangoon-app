@@ -14,7 +14,7 @@ class Regis_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_menu)
 
-        btnregis = findViewById(R.id.btn_registrasi)
+        btnregis = findViewById(R.id.btn_registrasiMain)
         btnregis.setOnClickListener {
             startActivity(Intent(this, Sign_in::class.java))
         }

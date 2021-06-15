@@ -8,41 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:210207877635:android:201faf0ffb5f9c73803c36",
-        "android_client_info": {
-          "package_name": "com.blaze.bangoon"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "210207877635-2kfn4ef1uapu0cfbiev0c1kotmbskuti.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBZb0aN8SPc0ZSx8IR9ci_g1vEXAWagmRY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "210207877635-2kfn4ef1uapu0cfbiev0c1kotmbskuti.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:210207877635:android:dd76b7bc631920a0803c36",
         "android_client_info": {
           "package_name": "com.example.apmob"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "210207877635-gtvun2tkb4h4n88nr91qo3s038fruvkl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apmob",
+            "certificate_hash": "b5a2c96c7fa1e906b36dd5cac12f9a482ac944c3"
+          }
+        },
         {
           "client_id": "210207877635-2kfn4ef1uapu0cfbiev0c1kotmbskuti.apps.googleusercontent.com",
           "client_type": 3

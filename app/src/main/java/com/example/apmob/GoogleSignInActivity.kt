@@ -1,95 +1,59 @@
-//package com.example.apmob
-//
-//import android.content.Intent
-//import android.os.Bundle
-//import android.util.Log
-//import android.widget.Toast
-//import androidx.appcompat.app.AppCompatActivity
-//import com.google.android.gms.auth.api.signin.GoogleSignIn
-//import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-//import com.google.android.gms.auth.api.signin.GoogleSignInClient
-//import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-//import com.google.firebase.auth.FirebaseAuth
-//import com.google.firebase.auth.GoogleAuthProvider
-//
-//class GoogleSignInActivity:AppCompatActivity(){
-//    private lateinit var googleSignInClient: GoogleSignInClient
-//    private lateinit var firebaseAuth: FirebaseAuth
-//    private lateinit var binding: ActivityMainBinding
-//
-//    private companion object{
-//        private const val RC_SIGN_IN = 100
-//        private const val TAG = "GOOGLE_SIGN_IN_TAG"
-//    }
-//    override fun onCreate(savedInstanceStates: Bundle?){
-//        super.onCreate(savedInstanceState)
-//        binding = ActivityMainBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-//
-//        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-//                .requestIdToken(R.string.default_web_client_id)
-//                .requestEmail()
-//                .build()
-//        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
-//
-//        //firebase auth
-//        firebaseAuth = FirebaseAuth.GetInstance()
-//        checkUser()
-//
-//        //bind tombol google
-//        binding.btnAddTodo.setOnClickListener{
-//            //start loggin in
-//            Log.d(TAG, "onCreate: begin Google SignIn")
-//            val intent = googleSignInClient.signInIntent
-//            startActivityForResult(intent, RC_SIGN_IN)
-//        }
-//    }
-//    private fun checkUser(){
-//
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if(requestCode == RC_SIGN_IN){
-//            Log.d(TAG, "onActivityResult: Google")
-//            val accountTask = GoogleSignIn.getSignedInAccountFromIntent(data)
-//            try{
-//                //success sign in
-//                val account = accountTask.getResult(ApiException::class.java)
-//                firebaseAuthWithGoogleAccount(account)
-//            }
-//            catch(e: Exception){
-//                //failed sign in
-//                Log.d(TAG, "onActivityResult: ${e.message}")
-//
-//            }
-//        }
-//    }
-//
-//    private fun firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?) {
-//        Log.d(TAG, "firebaseAuthWithGoogleAccount: ")
-//        val credential = GoogleAuthProvider.getCredential(account!!.idToken, null)
-//        firebaseAuth.signInWithCredential(credential)
-//                .addOnSuccessListener{authResult->
-//                    //success login
-//                    Log.d(TAG, "firebaseAuthWithGoogleAccount: LoggedIn")
-//
-//                    //get logged in user
-//                    val firebaseUser = firebaseAuth.currentUser
-//                    //get user info
-//                    val uid = firebaseUser!!.uid
-//                    val email = firebaseUser!!.email
-//                    Log.d(TAG, "firebaseAuthWithGoogleAccount: UID: $uid")
-//                    Log.d(TAG, "firebaseAuthWithGoogleAccount: Email: $email")
-//                    if(authResult.additionalUserInfo.isNewUser){
-//                        //new user
-//                        Log.d(TAG, "firebaseAuthWithGoogleAccount: Account created...$email")
-//                        Toast.makeText(this@GoogleSignInActivity,"Account created...$email", Toast.LENGTH_SHORT).show()
-//                    }
-//                    else{
-//
-//                    }
-//                }
-//    }
-//
-//}
+package com.example.apmob
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.register_menu.*
+import kotlinx.android.synthetic.main.sign_in_menu.*
+
+class GoogleSignInActivity:AppCompatActivity(){
+    private lateinit var auth: FirebaseAuth
+    private lateinit var getEmail: EditText
+    private lateinit var getPassword: EditText
+    private lateinit var btnRegister: Button
+    override fun onCreate(savedInstanceStates: Bundle?){
+        super.onCreate(savedInstanceStates)
+        setContentView(R.layout.register_menu)
+        auth = Firebase.auth
+        btnRegister = findViewById(R.id.btn_registrasi)
+        btnRegister.setOnClickListener(){
+            createUser()
+        }
+    }
+    private fun createUser(){
+        val email = getEmail.text.toString().trim()
+        val password = getPassword.text.toString().trim()
+        if(email.isEmpty()){
+            Toast.makeText(this@GoogleSignInActivity, "Your email is empty", Toast.LENGTH_SHORT).show()
+        }
+        if(password.isEmpty()){
+            Toast.makeText(this@GoogleSignInActivity, "Your password is empty", Toast.LENGTH_SHORT).show()
+        }
+        auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("debug", "createUserWithEmail:success")
+                        val user = auth.currentUser
+//                        updateUI(sign_in_menu)
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("debug", "createUserWithEmail:failure", task.exception)
+                        Toast.makeText(baseContext, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show()
+//                        updateUI(null)
+                    }
+                }
+    }
+
+
+
+}
