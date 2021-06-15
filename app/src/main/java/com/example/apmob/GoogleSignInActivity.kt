@@ -28,7 +28,8 @@ class GoogleSignInActivity:AppCompatActivity(){
         setContentView(binding.root)
         auth = Firebase.auth
         binding.btnRegistrasi.setOnClickListener(){
-            val intent = Intent(this, Regis_activity::class.java)
+            createUser()
+            val intent = Intent(this, mainMenu_activity::class.java)
             startActivity(intent)
         }
     }

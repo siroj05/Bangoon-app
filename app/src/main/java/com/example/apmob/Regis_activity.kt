@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
 import com.example.apmob.databinding.RegisterMenuBinding
+import kotlinx.android.synthetic.main.set_timer.*
+
 
 class Regis_activity : AppCompatActivity() {
 
@@ -18,6 +20,7 @@ class Regis_activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnRegistrasi.setOnClickListener {
+            GoogleSigninActivity
             startActivity(Intent(this, Sign_in::class.java))
         }
 
