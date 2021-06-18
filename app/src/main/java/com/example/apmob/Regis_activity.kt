@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Regis_activity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var btnregis: Button
+
     private lateinit var binding: RegisterMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

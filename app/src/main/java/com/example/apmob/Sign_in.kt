@@ -21,9 +21,16 @@ class Sign_in:AppCompatActivity(){
     private lateinit var login: Button
     private lateinit var email: EditText
     private lateinit var password: EditText
+    private lateinit var btnregis : Button
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sign_in_menu)
+
+        btnregis = findViewById(R.id.btn_registrasiMain)
+        btnregis.setOnClickListener {
+            startActivity(Intent( this, Regis_activity::class.java ))
+        }
+
         auth = FirebaseAuth.getInstance()
         email = findViewById(R.id.text_emailSignIn)
         password = findViewById(R.id.text_passwordSignIn)

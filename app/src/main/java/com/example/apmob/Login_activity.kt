@@ -7,6 +7,7 @@ import android.widget.Button
 
 class Login_activity : AppCompatActivity() {
     private lateinit var btnsignin: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -15,6 +16,8 @@ class Login_activity : AppCompatActivity() {
         btnsignin.setOnClickListener {
             startActivity(Intent(this, Sign_in::class.java))
         }
+
+
 
     }
 }
