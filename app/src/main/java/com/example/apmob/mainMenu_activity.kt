@@ -24,7 +24,7 @@ class mainMenu_activity : AppCompatActivity() {
             startActivity(Intent(this, SetTimer::class.java))
         }
 
-        userbtn = findViewById(R.id.userView)
+        userbtn = findViewById(R.id.userBtn)
         userbtn.setOnClickListener {
             startActivity(Intent(this, Profile::class.java))
         }

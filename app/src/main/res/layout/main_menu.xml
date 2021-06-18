@@ -77,31 +77,35 @@
         android:gravity="center"
         android:text=""
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="671dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/homeBtn"
-        android:layout_width="35dp"
-        android:layout_height="34dp"
+        android:layout_width="41dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_baseline_home_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"
-        app:srcCompat="@drawable/Home" />
+        app:layout_constraintVertical_bias="0.982" />
 
     <ImageView
         android:id="@+id/userBtn"
-        android:layout_width="35dp"
-        android:layout_height="34dp"
+        android:layout_width="41dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_baseline_person_20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"
-        app:srcCompat="@drawable/User" />
+        app:layout_constraintVertical_bias="0.982" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
