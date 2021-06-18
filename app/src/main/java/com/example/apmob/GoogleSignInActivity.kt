@@ -29,11 +29,11 @@ class GoogleSignInActivity:AppCompatActivity(){
         auth = Firebase.auth
         binding.btnRegistrasi.setOnClickListener(){
             createUser()
-            val intent = Intent(this, mainMenu_activity::class.java)
-            startActivity(intent)
+
         }
     }
     private fun createUser(){
+        Log.d("create user","create user dipanggil")
         val email = binding.textEmail.text.toString().trim()
         val password = binding.textPassword.text.toString().trim()
         if(email.isEmpty()){
@@ -48,6 +48,9 @@ class GoogleSignInActivity:AppCompatActivity(){
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("GoogleSignInActivity", "createUserWithEmail:success")
                         val user = auth.currentUser
+
+                        val intent = Intent(this, mainMenu_activity::class.java)
+                        startActivity(intent)
 //                        updateUI(sign_in_menu)
                     } else {
                         // If sign in fails, display a message to the user.

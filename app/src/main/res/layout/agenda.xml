@@ -27,7 +27,7 @@
             />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/backButton"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:gravity="center"

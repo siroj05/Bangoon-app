@@ -1,23 +1,18 @@
 package com.example.apmob
 
 import android.content.Intent
-import android.os.Bundle
-
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.ImageView
 
-
-class Agenda : AppCompatActivity() {
-    private lateinit var back : ImageView
+class Profile : AppCompatActivity() {
+    private lateinit var homeBtn : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.agenda)
-
-        back = findViewById(R.id.backButton)
-        back.setOnClickListener {
+        setContentView(R.layout.activity_profile)
+        homeBtn = findViewById(R.id.homeBtn)
+        homeBtn.setOnClickListener {
             startActivity(Intent(this, mainMenu_activity::class.java))
         }
-
-
     }
 }

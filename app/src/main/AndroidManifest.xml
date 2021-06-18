@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Apmob.NoActionBar">
-        <activity android:name=".Set_reminder"></activity>
+        <activity android:name=".Home"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".SetTimer" />
+        <activity android:name=".Set_reminder" />
         <activity android:name=".mainMenu_activity" />
         <activity android:name=".Regis_activity" />
         <activity android:name=".Sign_in" />
@@ -20,11 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Regis_activity">
-
-        </activity>
-
+        <activity android:name=".Regis_activity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Agenda" />
     </application>
