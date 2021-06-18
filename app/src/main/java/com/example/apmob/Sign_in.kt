@@ -17,57 +17,43 @@ import kotlinx.android.synthetic.main.register_menu.*
 import kotlinx.android.synthetic.main.sign_in_menu.*
 
 class Sign_in:AppCompatActivity(){
-    private lateinit var auth: FirebaseAuth
-    private lateinit var getEmail: EditText
-    private lateinit var getPassword: EditText
-    private lateinit var btnRegister: Button
-    private lateinit var binding: SignInMenuBinding
-    private lateinit var btnlogin: Button
-
-    override fun onCreate(savedInstanceStates: Bundle?){
-        super.onCreate(savedInstanceStates)
-        binding = SignInMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-
-        binding.btnLogin.setOnClickListener {
-            startActivity(Intent(this, mainMenu_activity::class.java))
-        }
-
-
-
-        auth = Firebase.auth
-        binding.btnRegistrasiMain.setOnClickListener(){
-            val intent = Intent(this, Regis_activity::class.java)
-            startActivity(intent)
+    private lateinit var auth:FirebaseAuth
+    private lateinit var login: Button
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.sign_in_menu)
+        auth = FirebaseAuth.getInstance()
+        email = findViewById(R.id.text_emailSignIn)
+        password = findViewById(R.id.text_passwordSignIn)
+        login = findViewById(R.id.btn_login)
+        login.setOnClickListener{
+            loginUser()
         }
     }
-    private fun createUser(){
-        val email = getEmail.text.toString().trim()
-        val password = getPassword.text.toString().trim()
+    private fun loginUser(){
+        Log.d("login","login di sini bang")
+        val email = email.text.toString().trim()
+        val password = password.text.toString().trim()
         if(email.isEmpty()){
             Toast.makeText(this, "Your email is empty", Toast.LENGTH_SHORT).show()
         }
         if(password.isEmpty()){
             Toast.makeText(this, "Your password is empty", Toast.LENGTH_SHORT).show()
         }
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d("GoogleSignInActivity", "createUserWithEmail:success")
-                    val user = auth.currentUser
-//                        updateUI(sign_in_menu)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w("GoogleSignInActivity", "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-//                        updateUI(null)
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("debug", "signInWithEmail:success")
+                        val user = auth.currentUser
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("debug", "signInWithEmail:failure", task.exception)
+                        Toast.makeText(baseContext, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
     }
-
-
-
 }
